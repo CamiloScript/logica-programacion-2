@@ -22,7 +22,7 @@ function convertirTemperatura() {
 
     // Verificar si el valor ingresado es un número y el input ingresado no se encuentra vacio.
     if (isNaN(celsius) || celsius === "") {
-        console.log("Por favor, ingrese un valor numérico válido.");
+        console.log("Favor ingrese un dato valido (Numeros), el valor ingresado no es correcto, intentelo nuevamente.");
         return convertirTemperatura(); // Volver a solicitar la temperatura si el valor no es válido
     } else {
         // Convertir el valor ingresado a número decimal, para poder obtener resultados exactos.
