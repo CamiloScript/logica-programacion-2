@@ -28,7 +28,7 @@ function convertirTemperatura() {
         // Convertir el valor ingresado a número decimal, para poder obtener resultados exactos.
         celsius = parseFloat(celsius);
     }
-    // Se realizan las conversiones de temperatura
+    // Se realizan las conversiones de temperatura //
     let fahrenheit = convertirGradosFahrenheit(celsius);
     let kelvin = convertirGradosKelvin(celsius);
 
