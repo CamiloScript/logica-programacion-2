@@ -1,5 +1,5 @@
 //Transformador de Grados Celcius a Fahrenheit y Kelvin - Camilo González Jara
-// Se genera Prompt Sync, para ingreso de información a traves de consola-
+// Se genera Prompt Sync, para ingreso de información a traves de consola (npm i prompt-sync)
 var prompt = require("prompt-sync")();
 
 // Funcion para convertir grados Celsius a Fahrenheit.
@@ -18,21 +18,21 @@ function convertirGradosKelvin(c) {
 function convertirTemperatura() {
     let celsius = prompt("Ingresar a continuación grados Celsius, para transformarlos a grados Fahrenheit y Kelvin : ");
 
-    // Se condiciona el input, para que pueda revisarse la información ingresada, si esta no corresponde a un numero, se devuelve un mensaje de error y se repite el proceso.
+    // Se condiciona el input, para que pueda revisarse la información ingresada, si esta no corresponde a un numero o se encuentra vacía, se devuelve un mensaje de error y se repite el proceso.
 
-    // Verificar si el valor ingresado es un número y el input ingresado no se encuentra vacio.
+    // Verificar si el valor ingresado es un número y el input ingresado no se encuentra vacio, IsNaN es una función que verifica si un valor x no es un numero (Devuelve verdadero o falso).
     if (isNaN(celsius) || celsius === "") {
         console.log("Favor ingrese un dato valido (Numeros), el valor ingresado no es correcto, intentelo nuevamente.");
-        return convertirTemperatura(); // Volver a solicitar la temperatura si el valor no es válido
+        return convertirTemperatura(); // Volver a solicitar la temperatura si el valor no es válido, se vuelve a iniciar la función convertirTemperatura.
     } else {
-        // Convertir el valor ingresado a número decimal, para poder obtener resultados exactos.
+        // Si el valor ingresado es un numero se convierte el valor ingresado a número decimal, para poder obtener resultados exactos.
         celsius = parseFloat(celsius);
     }
     // Se realizan las conversiones de temperatura //
     let fahrenheit = convertirGradosFahrenheit(celsius);
     let kelvin = convertirGradosKelvin(celsius);
 
-    // Se imprimen los rersultados en la consola
+    // Se imprimen los resultados en la consola
     console.log("Los grados Celsius ingresados, corresponden a : " + fahrenheit + " Grados Fahrenheit. ");
     console.log("Los grados Celsius ingresados, corresponden a : " + kelvin + " Grados Kelvin. ");
 }
